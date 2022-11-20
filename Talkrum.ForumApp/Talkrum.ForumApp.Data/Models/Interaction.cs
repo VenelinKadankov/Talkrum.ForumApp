@@ -1,9 +1,15 @@
 ﻿namespace Talkrum.ForumApp.Data.Models;
 
+using System.ComponentModel.DataAnnotations;
 using Talkrum.ForumApp.Data.Common;
 
 public class Interaction : BaseModel<int>
 {
+    [Required]
+    public string? AuthorId { get; set; }
+
+    public ApplicationUser? Author { get; set; }
+
     // TODO: Make it enumerable - like, dislike, some emojis etc.
     public bool IsLike { get; set; }
 

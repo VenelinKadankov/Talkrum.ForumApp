@@ -14,7 +14,7 @@ public class Topic : BaseModel<int>
     }
 
     [Required]
-    [MaxLength(100)]
+    [MaxLength(200)]
     public string? Title { get; set; }
 
     [Required]
@@ -30,5 +30,6 @@ public class Topic : BaseModel<int>
 
     public ICollection<TopicComment>? TopicComments { get; set; }
 
+    // Participants
     public ICollection<ApplicationUser>? ApplicationUsers { get; set; }
 }
